@@ -5,54 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VerteMarkPackager"
         mc:Ignorable="d"
-        Title="VerteMarkPackager" Height="450" Width="800">
+        Title="VerteMarkPackager" Height="500" Width="800">
     <DockPanel>
 
         <!-- Menu Bar -->
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Nápověda" Click="HelpMenuItem_Click"/>
-            <MenuItem Header="Informace" Click="InfoMenuItem_Click"/>
-            <MenuItem Header="O aplikaci" Click="AboutItem_Click"/>
+            <MenuItem Header="Návod" Click="HelpMenuItem_Click"/>
+            <!--<MenuItem Header="Informace" Click="InfoMenuItem_Click"/>-->
             <MenuItem Header="Nahlásit problém" Click="ReportItem_Click"/>
+            <MenuItem Header="O aplikaci" Click="AboutItem_Click"/>
         </Menu>
 
-        <Grid Margin="128,20,128,20" Height="388">
+        <Canvas Margin="30, 15">
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <!-- Row for ProgressBar -->
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto" MinWidth="105"/>
-            </Grid.ColumnDefinitions>
-            <TextBlock HorizontalAlignment="Left" Margin="395,21,0,42">2.0</TextBlock>
-            <TextBlock HorizontalAlignment="Center" FontSize="30" Grid.ColumnSpan="2">VerteMarkPackager</TextBlock>
+            <TextBlock HorizontalAlignment="Left" Canvas.Left="576" Canvas.Top="58" VerticalAlignment="Center">3.0</TextBlock>
+            <TextBlock HorizontalAlignment="Left" FontSize="45" Grid.ColumnSpan="2" Canvas.Left="163" Canvas.Top="12" FontWeight="Bold">VerteMarkPackager</TextBlock>
 
             <!-- DICOM Files Directory Selection -->
-            <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Height="16">Adresář s DICOM soubory:</TextBlock>
-            <TextBox x:Name="DicomFilesDirectoryTextBox" Grid.Row="1" Grid.Column="0" Margin="49,0,10,0" VerticalAlignment="Center" Height="18"/>
-            <Button Grid.Column="1" Margin="10,0,0,0" Grid.Row="1" Content="Procházet" VerticalAlignment="Center" Click="OnBrowseDicomFilesDirectory" Height="20"/>
+            <TextBlock VerticalAlignment="Center" FontSize="16" Padding="0" Height="24" Canvas.Left="6" Canvas.Top="144">Adresář s DICOM soubory:</TextBlock>
+            <TextBox x:Name="DicomFilesDirectoryTextBox" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Height="30" Canvas.Left="204" Canvas.Top="142" HorizontalAlignment="Left" Width="396"/>
+            <Button Grid.Column="1" Grid.Row="1" Content="Procházet" VerticalAlignment="Top" Click="OnBrowseDicomFilesDirectory" Height="30" Canvas.Left="624" Canvas.Top="142" HorizontalAlignment="Left"/>
 
             <!-- Save Directory Selection -->
-            <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Height="16">Adresář pro uložení:</TextBlock>
-            <TextBox x:Name="SaveDirectoryTextBox" Grid.Row="2" Grid.Column="0" Margin="49,0,10,0" VerticalAlignment="Center" Height="18"/>
-            <Button Grid.Row="2" Grid.Column="1" Margin="10,0,0,28" Content="Procházet" VerticalAlignment="Bottom" Click="OnBrowseSaveDirectory" Height="20"/>
+            <TextBlock VerticalAlignment="Center" Height="24" Padding="0" Canvas.Left="50" FontSize="16" Canvas.Top="199" HorizontalAlignment="Center">Adresář pro uložení:</TextBlock>
+            <TextBox x:Name="SaveDirectoryTextBox" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Height="30" Canvas.Left="204" Canvas.Top="195" HorizontalAlignment="Left" Width="396"/>
+            <Button Grid.Row="2" Grid.Column="1" Content="Procházet" VerticalAlignment="Center" Click="OnBrowseSaveDirectory" Height="30" Canvas.Left="624" Canvas.Top="195" HorizontalAlignment="Left"/>
 
             <!-- DICOM Files Count Slider -->
-            <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" Height="16">Počet DICOM souborů ve složce:</TextBlock>
-            <Slider x:Name="DicomFilesCountSlider" Grid.Row="3" Grid.Column="0" Minimum="0" Maximum="50" Value="15" TickFrequency="1" IsSnapToTickEnabled="True" VerticalAlignment="Center" Margin="49,0,10,0" ValueChanged="DicomFilesCountSlider_ValueChanged" Height="18"/>
-            <TextBox x:Name="DicomFilesCountTextBox" Grid.Row="3" Grid.Column="1" Margin="16,0,6,0" VerticalAlignment="Center" Text="15" TextChanged="OnDicomFilesCountTextChanged" Height="18"/>
+            <TextBlock VerticalAlignment="Top" Height="24" FontSize="16" Canvas.Left="26" Canvas.Top="255">Počet DICOM ve složce:</TextBlock>
+            <Slider x:Name="DicomFilesCountSlider" Minimum="1" Maximum="50" Value="20" TickFrequency="1" IsSnapToTickEnabled="True" VerticalAlignment="Top" ValueChanged="DicomFilesCountSlider_ValueChanged" Height="30" Width="396" Padding="0" Canvas.Left="204" Canvas.Top="252" HorizontalAlignment="Center"/>
+            <TextBox x:Name="DicomFilesCountTextBox" VerticalAlignment="Center" Text="20" TextChanged="OnDicomFilesCountTextChanged" Height="20" Width="34" Padding="0" Canvas.Left="624" Canvas.Top="256" HorizontalAlignment="Center" TextAlignment="Center"/>
             <!-- Create Button -->
-            <Button x:Name="CreateButton" Grid.Row="4" Grid.Column="0" Content="Vytvořit!" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Margin="105,0,0,0" Click="OnCreateButtonClick" Height="20"/>
+            <Button x:Name="CreateButton" Grid.Row="4" Grid.Column="0" Content="Vytvořit!" VerticalAlignment="Top" HorizontalAlignment="Left" Width="149" Click="OnCreateButtonClick" Height="50" Canvas.Left="296" Canvas.Top="310" FontSize="14" Padding="0"/>
 
             <!-- ProgressBar -->
             <ProgressBar x:Name="ProgressBar" Grid.Row="4" Grid.Column="0" Margin="100,0,0,0" Height="20" Minimum="0" Maximum="100" Visibility="Collapsed"/>
-        </Grid>
+        </Canvas>
     </DockPanel>
 </Window>
