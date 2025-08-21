@@ -3,7 +3,7 @@
 
 ### Autoři
 
-Alex Schönfelder
+Alex Schönfelder\
 Hynek Půta
 
 ##
