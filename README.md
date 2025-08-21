@@ -3,8 +3,8 @@
 
 ### Autoři
 
-Alex Schönfelder - Hlavní autor\
-Hynek Půta - Dodatečné modifikace
+Alex Schönfelder
+Hynek Půta
 
 ##
 
