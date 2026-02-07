@@ -1,7 +1,7 @@
 # VerteMarkPackager
  Packager .vmk souborů pro [VerteMark](https://gitlab.odas.ujep.cz/putah/vertemark).
  
- Program a návod na instalaci jsou k dispozici v sekci [Releases](https://gitlab.odas.ujep.cz/putah/vertemarkpackager/-/releases).
+ Program a návod na jeho instalaci jsou k dispozici v sekci [Releases](https://gitlab.odas.ujep.cz/putah/vertemarkpackager/-/releases).
 
 ### Autoři
 
